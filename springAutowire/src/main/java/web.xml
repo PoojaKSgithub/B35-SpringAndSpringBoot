@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+<!--below line is used to activate annotations in beans already registered in the
+application context-->
+
+<context:annotation-config/>
+
+<!--At a one time, if we create multiple beans for same type(class)
+ then we will get exception, to overcome these , we have to use 
+ @Qualifier in class-->
+ 
+<bean id="pass" class="org.tnsif.usingautowireannot.Passport">
+<property name="city" value="Nashik"/>
+<property name="enddate" value="12-05-2027"/>
+</bean>
+
+<bean id="pass1" class="org.tnsif.usingautowireannot.Passport">
+<property name="city" value="Mumbai"/>
+<property name="enddate" value="25-03-2029"/>
+</bean>
+
+<bean id="city" class="org.tnsif.usingautowireannot.Citizen">
+</bean>
+
+
+
+</beans>
